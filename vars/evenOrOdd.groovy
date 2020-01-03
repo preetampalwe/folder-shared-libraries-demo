@@ -1,5 +1,7 @@
 #!groovy
 
+
+
 def call(int buildNumber) {
   if (buildNumber % 2 == 0) {
     pipeline {
@@ -7,7 +9,9 @@ def call(int buildNumber) {
       stages {
         stage('Even Stage') {
           steps {
-            echo "The build number is even"
+            script{
+                log.info "The build number is even"
+            }  
           }
         }
       }
